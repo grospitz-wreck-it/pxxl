@@ -3,6 +3,33 @@ import Image from "next/image";
 export default function Home() {
   return (
     <main className="min-h-screen bg-transparent text-[#111111]">
+      <script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      name: "pxxl productions",
+      url: "https://pxxl-productions.de",
+      areaServed: [
+        "Kirchlengern",
+        "Bünde",
+        "Löhne",
+        "Herford",
+        "Bielefeld",
+        "Osnabrück",
+        "Ostwestfalen",
+      ],
+      knowsAbout: [
+        "Webentwicklung",
+        "Apps",
+        "KI Tools",
+        "Browsergames",
+        "Digitale Produkte",
+      ],
+    }),
+  }}
+/>
       {/* hero */}
 
       <section className="relative overflow-hidden">
@@ -145,7 +172,7 @@ export default function Home() {
   className="mx-auto max-w-7xl px-6 pb-32"
 >
   <div className="border-t border-black/10 pt-20">
-    <p className="text-xs font-semibold uppercase tracking-[0.35em] text-fuchsia-500">
+    <p className="text-xs font-semibold tracking-[0.35em] text-fuchsia-500">
       about
     </p>
 
@@ -153,10 +180,22 @@ export default function Home() {
       pxxl productions
     </h2>
 
-    <p className="mt-10 max-w-3xl text-2xl leading-relaxed text-neutral-600">
-      we create games, apps and digital experiences
-      with a focus on creativity, entertainment and
-      modern web technologies.
+    <p className="mt-10 max-w-4xl text-xl leading-relaxed text-neutral-600">
+      pxxl productions entwickelt moderne webseiten,
+      apps, ki-tools, widgets, browsergames und
+      digitale produkte.
+    </p>
+
+    <p className="mt-6 max-w-4xl text-xl leading-relaxed text-neutral-600">
+      der fokus liegt auf performanten webanwendungen,
+      kreativen digitalen erlebnissen und innovativen
+      softwarelösungen für unternehmen, startups und
+      eigene produkte.
+    </p>
+
+    <p className="mt-6 max-w-4xl text-xl leading-relaxed text-neutral-600">
+      tätig in kirchlengern, bünde, löhne, herford,
+      bielefeld, osnabrück und ganz ostwestfalen.
     </p>
   </div>
 </section>
@@ -185,7 +224,17 @@ export default function Home() {
               <a href="/imprint">imprint</a>
             </div>
           </div>
+<div className="mt-10 border-t border-black/10 pt-8 text-sm text-neutral-500">
+  <p>
+    webseiten · apps · ki-tools · widgets ·
+    browsergames · digitale produkte
+  </p>
 
+  <p className="mt-3">
+    kirchlengern · bünde · löhne · herford ·
+    bielefeld · osnabrück · ostwestfalen
+  </p>
+</div>
           <p className="mt-8 text-center text-xs text-neutral-400">
             © 2026 pxxl productions
           </p>
