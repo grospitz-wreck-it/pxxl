@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import Aurora from "@/components/aurora";
 export default function Home() {
   return (
     <main className="min-h-screen bg-transparent text-[#111111]">
@@ -33,9 +34,7 @@ export default function Home() {
       {/* hero */}
 
       <section className="relative overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute left-1/2 top-0 h-[700px] w-[700px] -translate-x-1/2 rounded-full bg-fuchsia-500/10 blur-[140px]" />
-        </div>
+        <Aurora />
 
         <div className="relative mx-auto flex min-h-[100svh] max-w-5xl flex-col items-center justify-center px-6 py-20 text-center">
           <Image

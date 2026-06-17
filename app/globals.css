@@ -41,3 +41,38 @@ a {
 img {
   user-select: none;
 }
+@keyframes aurora-float {
+  0% {
+    transform: translate3d(-50%, 0px, 0px)
+      rotate(0deg)
+      scale(1);
+  }
+
+  25% {
+    transform: translate3d(-50%, -15px, 0px)
+      rotate(2deg)
+      scale(1.03);
+  }
+
+  50% {
+    transform: translate3d(-50%, -25px, 0px)
+      rotate(4deg)
+      scale(1.06);
+  }
+
+  75% {
+    transform: translate3d(-50%, -10px, 0px)
+      rotate(2deg)
+      scale(1.03);
+  }
+
+  100% {
+    transform: translate3d(-50%, 0px, 0px)
+      rotate(0deg)
+      scale(1);
+  }
+}
+
+.aurora {
+  animation: aurora-float 18s ease-in-out infinite;
+}
