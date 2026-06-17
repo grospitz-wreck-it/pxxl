@@ -1,5 +1,5 @@
 import Image from "next/image";
-
+import Link from "next/link";
 export default function ContactPage() {
   return (
     <main className="min-h-screen px-6 py-20">
@@ -21,6 +21,7 @@ export default function ContactPage() {
           <p className="mt-4 text-neutral-600">
             let's build something interesting.
           </p>
+
         </div>
 
         <form
@@ -84,7 +85,7 @@ export default function ContactPage() {
             </label>
 
             <textarea
-              name="message"
+              name="nachricht"
               required
               rows={8}
               className="w-full rounded-2xl border border-black/10 px-5 py-4"
@@ -95,10 +96,20 @@ export default function ContactPage() {
             type="submit"
             className="rounded-full bg-black px-8 py-4 text-white"
           >
-            nachricht senden
+            senden.
           </button>
+          <div className="flex justify-end">
+  <Link
+    href="/"
+    className="text-sm font-medium text-neutral-500 transition hover:text-black"
+  >
+    zurück.
+  </Link>
+</div>
         </form>
+        
       </div>
+      
     </main>
   );
 }
