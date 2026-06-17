@@ -36,9 +36,9 @@ ${message}
     });
 
     return NextResponse.redirect(
-      new URL("/contact?success=1", request.url),
-      303
-    );
+  new URL("/contact/success", request.url),
+  303
+);
   } catch (error) {
     console.error(error);
 
