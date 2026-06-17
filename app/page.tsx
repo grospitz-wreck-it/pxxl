@@ -223,9 +223,9 @@ export default function Home() {
   href="/contact"
   className="transition hover:text-black"
 >
-  contact
+  kontakt
 </Link>
-              <a href="/imprint">imprint</a>
+              <a href="/imprint">impressum</a>
             </div>
           </div>
 <div className="mt-10 border-t border-black/10 pt-8 text-sm text-neutral-500">
