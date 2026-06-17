@@ -1,3 +1,4 @@
+import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
@@ -22,7 +23,7 @@ export async function POST(request: Request) {
       from: "onboarding@resend.dev",
       replyTo: email,
       to: process.env.CONTACT_EMAIL!,
-      subject: `[${subject}] Neue Kontaktanfrage`,
+      subject: `[${subject}] neue kontaktanfrage`,
       text: `
 name: ${name}
 
@@ -34,14 +35,16 @@ ${message}
 `,
     });
 
-    return Response.redirect(
-      new URL("/contact?success=1", request.url)
+    return NextResponse.redirect(
+      new URL("/contact?success=1", request.url),
+      303
     );
   } catch (error) {
     console.error(error);
 
-    return Response.redirect(
-      new URL("/contact?error=1", request.url)
+    return NextResponse.redirect(
+      new URL("/contact?error=1", request.url),
+      303
     );
   }
 }

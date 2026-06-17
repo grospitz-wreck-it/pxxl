@@ -1,5 +1,5 @@
 import Image from "next/image";
-
+import Link from "next/link";
 export default function Home() {
   return (
     <main className="min-h-screen bg-transparent text-[#111111]">
@@ -219,8 +219,12 @@ export default function Home() {
             </div>
 
             <div className="flex gap-8 text-sm">
-              <a href="#">github</a>
-              <a href="#">contact</a>
+<Link
+  href="/contact"
+  className="transition hover:text-black"
+>
+  contact
+</Link>
               <a href="/imprint">imprint</a>
             </div>
           </div>
