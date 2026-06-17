@@ -84,12 +84,12 @@ export default function ImprintPage() {
         </div>
 
         <div className="mt-20">
-          <Link
-            href="/"
-            className="inline-flex rounded-full bg-black px-6 py-3 text-white transition hover:scale-[1.03]"
-          >
-            zurück.
-          </Link>
+         <Link
+    href="/"
+    className="rounded-full border border-black bg-white px-6 py-3 font-medium text-black transition hover:scale-[1.03]"
+  >
+    zurück.
+  </Link>
         </div>
       </div>
     </main>

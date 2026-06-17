@@ -29,11 +29,11 @@ export default function ContactSuccessPage() {
         </p>
 
         <Link
-          href="/"
-          className="mt-10 inline-flex rounded-full bg-black px-8 py-4 text-white transition hover:scale-[1.03]"
-        >
-          zurück.
-        </Link>
+    href="/"
+    className="rounded-full border border-black bg-white px-6 py-3 font-medium text-black transition hover:scale-[1.03]"
+  >
+    zurück.
+  </Link>
       </div>
     </main>
   );

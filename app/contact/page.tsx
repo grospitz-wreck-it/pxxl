@@ -99,12 +99,14 @@ export default function ContactPage() {
             senden.
           </button>
           <div className="flex justify-end">
+  <div className="mt-6 flex justify-end">
   <Link
     href="/"
-    className="text-sm font-medium text-neutral-500 transition hover:text-black"
+    className="rounded-full border border-black bg-white px-6 py-3 font-medium text-black transition hover:scale-[1.03]"
   >
     zurück.
   </Link>
+</div>
 </div>
         </form>
         
