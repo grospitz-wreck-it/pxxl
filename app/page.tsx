@@ -37,21 +37,21 @@ export default function Home() {
           <div className="absolute left-1/2 top-0 h-[700px] w-[700px] -translate-x-1/2 rounded-full bg-fuchsia-500/10 blur-[140px]" />
         </div>
 
-        <div className="relative mx-auto flex min-h-screen max-w-5xl flex-col items-center justify-center px-6 text-center">
+        <div className="relative mx-auto flex min-h-[100svh] max-w-5xl flex-col items-center justify-center px-6 py-20 text-center">
           <Image
-            src="/logo.webp"
-            alt="pxxl productions"
-            width={420}
-            height={420}
-            priority
-            className="drop-shadow-[0_50px_120px_rgba(0,0,0,.15)]"
-          />
+  src="/logo.webp"
+  alt="pxxl productions"
+  width={420}
+  height={420}
+  priority
+  className="h-auto w-[220px] drop-shadow-[0_50px_120px_rgba(0,0,0,.15)] sm:w-[280px] md:w-[360px]"
+/>
 
           <p className="mt-10 text-sm font-medium tracking-[0.4em] text-fuchsia-500">
   pxxl productions
 </p>
 
-          <h1 className="mt-8 text-6xl font-black leading-[0.88] tracking-[-0.08em] md:text-8xl xl:text-[8rem]">
+          <h1 className="mt-8 text-5xl font-black leading-[0.9] tracking-[-0.08em] sm:text-6xl md:text-8xl xl:text-[8rem]">
             tools.
             <br />
             games.
@@ -65,7 +65,7 @@ export default function Home() {
 
           <a
             href="#project"
-            className="mt-10 rounded-full bg-black px-7 py-4 font-medium text-white transition duration-300 hover:scale-[1.03]"
+            className="mt-8 w-full max-w-xs rounded-full bg-black px-7 py-4 font-medium text-white transition duration-300 hover:scale-[1.03] sm:w-auto"
           >
             explore project →
           </a>
@@ -81,7 +81,7 @@ export default function Home() {
   {/* background number */}
 
   <div className="pointer-events-none absolute left-1/2 top-0 -translate-x-1/2 select-none">
-    <span className="text-[18rem] font-black leading-none tracking-[-0.08em] text-black/[0.03] md:text-[32rem]">
+    <span className="text-[8rem] md:text-[32rem] font-black leading-none tracking-[-0.08em] text-black/[0.03] md:text-[32rem]">
       01
     </span>
   </div>
@@ -93,7 +93,7 @@ export default function Home() {
       project 01
     </p>
 
-    <h2 className="mt-6 text-6xl font-black tracking-[-0.07em] md:text-8xl xl:text-[9rem]">
+    <h2 className="mt-6 text-5xl font-black leading-[0.9] tracking-[-0.07em] sm:text-6xl md:text-8xl xl:text-[9rem]">
       HARD
       <br />
       WAY 
@@ -119,7 +119,7 @@ export default function Home() {
       alt="football simulator"
       width={1920}
       height={1080}
-      className="w-full object-cover"
+      className="aspect-[4/5] w-full object-cover md:aspect-auto"
       priority
     />
   </div>
@@ -176,7 +176,7 @@ export default function Home() {
       about
     </p>
 
-    <h2 className="mt-6 text-5xl font-black tracking-tight md:text-7xl">
+    <h2 className="mt-6 text-4xl font-black tracking-tight sm:text-5xl md:text-7xl">
       pxxl productions
     </h2>
 
@@ -218,7 +218,7 @@ export default function Home() {
               </span>
             </div>
 
-            <div className="flex gap-8 text-sm">
+            <div className="flex flex-wrap justify-center gap-6 text-sm md:justify-start">
 <Link
   href="/contact"
   className="transition hover:text-black"
