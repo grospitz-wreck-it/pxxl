@@ -19,20 +19,20 @@ export default function ContactSuccessPage() {
         </p>
 
         <h1 className="mt-6 text-5xl font-black tracking-tight">
-          message sent.
+          nachricht gesendet.
         </h1>
 
         <p className="mt-6 text-xl leading-relaxed text-neutral-600">
-          thank you for your message.
+          danke für deine nachricht.
           <br />
-          i'll get back to you as soon as possible.
+          ich melde mich so schnell wie möglich.
         </p>
 
         <Link
           href="/"
           className="mt-10 inline-flex rounded-full bg-black px-8 py-4 text-white transition hover:scale-[1.03]"
         >
-          back to homepage
+          zurück.
         </Link>
       </div>
     </main>
