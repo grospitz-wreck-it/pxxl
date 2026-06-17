@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+
 export default function ContactPage() {
   return (
     <main className="min-h-screen px-6 py-20">
@@ -14,14 +15,13 @@ export default function ContactPage() {
             priority
           />
 
-          <h1 className="mt-8 text-5xl font-black tracking-tight">
-            contact
+          <h1 className="mt-8 text-5xl font-black tracking-tight md:text-7xl">
+            kontakt.
           </h1>
 
           <p className="mt-4 text-neutral-600">
-            let's build something interesting.
+            lass uns etwas interessantes bauen.
           </p>
-
         </div>
 
         <form
@@ -85,33 +85,30 @@ export default function ContactPage() {
             </label>
 
             <textarea
-              name="nachricht"
+              name="message"
               required
               rows={8}
               className="w-full rounded-2xl border border-black/10 px-5 py-4"
             />
           </div>
 
-          <button
-            type="submit"
-            className="rounded-full bg-black px-8 py-4 text-white"
-          >
-            senden.
-          </button>
-          <div className="flex justify-end">
-  <div className="mt-6 flex justify-end">
-  <Link
-    href="/"
-    className="rounded-full border border-black bg-white px-6 py-3 font-medium text-black transition hover:scale-[1.03]"
-  >
-    zurück.
-  </Link>
-</div>
-</div>
+          <div className="mt-8 flex items-center justify-between">
+            <button
+              type="submit"
+              className="rounded-full bg-black px-8 py-4 font-medium text-white transition duration-300 hover:scale-[1.03]"
+            >
+              senden.
+            </button>
+
+            <Link
+              href="/"
+              className="rounded-full border border-black bg-transparent px-8 py-4 font-medium text-black transition duration-300 hover:scale-[1.03]"
+            >
+              zurück.
+            </Link>
+          </div>
         </form>
-        
       </div>
-      
     </main>
   );
 }
