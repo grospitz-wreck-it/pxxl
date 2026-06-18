@@ -7,13 +7,13 @@ export default function HardWayUpPage() {
       <section>
         <Image
           src="/hard-way-up-hero.webp"
-          alt="Hard Way Up"
-          width={1920}
-          height={1080}
-          className="h-[50vh] w-full object-cover md:h-[70vh]"
-          priority
-        />
-      </section>
+             alt="Hard Way Up"
+    width={1920}
+    height={1080}
+    className="w-full h-auto"
+    priority
+  />
+</section>
 
       <section className="mx-auto max-w-7xl px-6 py-20">
         <p className="text-xs font-semibold tracking-[0.35em] text-fuchsia-500">
