@@ -110,31 +110,34 @@ export default function Home() {
     <div className="grid gap-12 border-t border-black/10 pt-16 md:grid-cols-3">
       <div>
         <p className="text-5xl font-black tracking-tight">
-          retro.
+          schnell und kostenlos.
         </p>
 
         <p className="mt-4 text-lg leading-relaxed text-neutral-600">
-          schnell.
+          verein wählen, spiel starten und aufsteigen.
+          kostenlos und ohne anmeldung spielbar
         </p>
       </div>
 
       <div>
         <p className="text-5xl font-black tracking-tight">
-          hyperlokal.
+          taktisch und interaktiv.
         </p>
 
         <p className="mt-4 text-lg leading-relaxed text-neutral-600">
-          inspiriert von den fußballspielen der 80er und 90er.
+          du greifst aktiv ins spielgeschehen ein. neben und auf dem platz.
+          aufstellungen, taktik, management.
         </p>
       </div>
 
       <div>
         <p className="text-5xl font-black tracking-tight">
-          sofort.
+          hyperlokal und retro.
         </p>
 
         <p className="mt-4 text-lg leading-relaxed text-neutral-600">
-          einsteigen, spielen und direkt spaß haben.
+          bringe den verein deiner nachbarschaft in die erste liga. 
+          im look der 80er jahre.
         </p>
       </div>
     </div>
