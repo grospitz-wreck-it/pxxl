@@ -3,61 +3,67 @@
 import { useEffect, useState } from "react";
 
 export default function Aurora() {
-  const [auroraClass, setAuroraClass] = useState(
-    "from-fuchsia-500/20 via-violet-500/15 to-cyan-400/10"
+  const [colors, setColors] = useState(
+    "from-fuchsia-500/30 via-violet-500/20 to-cyan-400/20"
   );
 
   useEffect(() => {
     const hour = new Date().getHours();
 
     if (hour >= 6 && hour < 12) {
-      setAuroraClass(
-        "from-cyan-400/20 via-violet-500/15 to-fuchsia-500/15"
+      setColors(
+        "from-cyan-400/30 via-blue-500/20 to-violet-500/25"
       );
     } else if (hour >= 12 && hour < 18) {
-      setAuroraClass(
-        "from-violet-400/20 via-fuchsia-500/20 to-cyan-300/10"
+      setColors(
+        "from-fuchsia-500/30 via-pink-500/25 to-violet-500/25"
       );
     } else if (hour >= 18 && hour < 22) {
-      setAuroraClass(
-        "from-fuchsia-500/25 via-violet-600/20 to-indigo-500/15"
+      setColors(
+        "from-orange-400/25 via-fuchsia-500/30 to-violet-600/25"
       );
     } else {
-      setAuroraClass(
-        "from-indigo-500/20 via-violet-600/20 to-cyan-500/10"
+      setColors(
+        "from-indigo-600/30 via-violet-700/25 to-cyan-500/20"
       );
     }
   }, []);
 
   return (
-    <div className="absolute inset-0 pointer-events-none overflow-hidden">
-      {/* main aurora */}
+    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      {/* band 1 */}
 
       <div
-        className={`aurora absolute left-1/2 top-[5%] h-[700px] w-[1000px] -translate-x-1/2 rounded-full bg-gradient-to-r ${auroraClass} blur-[180px] opacity-90 md:h-[900px] md:w-[1400px]`}
+        className={`aurora-band absolute left-[-15%] top-[-20%] h-[140vh] w-[28vw] bg-gradient-to-b ${colors}`}
       />
 
-      {/* left stream */}
+      {/* band 2 */}
 
       <div
-        className={`aurora absolute left-[-10%] top-[20%] h-[450px] w-[450px] rounded-full bg-gradient-to-r ${auroraClass} blur-[160px] opacity-60 md:h-[600px] md:w-[600px]`}
-        style={{
-          animationDelay: "-6s",
-        }}
+        className={`aurora-band-reverse absolute left-[20%] top-[-15%] h-[130vh] w-[24vw] bg-gradient-to-b ${colors}`}
       />
 
-      {/* right stream */}
+      {/* band 3 */}
 
       <div
-        className={`aurora absolute right-[-10%] top-[10%] h-[500px] w-[500px] rounded-full bg-gradient-to-r ${auroraClass} blur-[180px] opacity-50 md:h-[700px] md:w-[700px]`}
-        style={{
-          animationDelay: "-12s",
-        }}
+        className={`aurora-band absolute left-[45%] top-[-25%] h-[150vh] w-[22vw] bg-gradient-to-b ${colors}`}
       />
 
-      {/* logo glow */}
+      {/* band 4 */}
 
-      <div className="absolute left-1/2 top-1/2 h-[280px] w-[280px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-fuchsia-500/15 blur-[100px] md:h-[380px] md:w-[380px]" />
+      <div
+        className={`aurora-band-reverse absolute left-[65%] top-[-20%] h-[130vh] w-[24vw] bg-gradient-to-b ${colors}`}
+      />
+
+      {/* band 5 */}
+
+      <div
+        className={`aurora-band absolute right-[-10%] top-[-10%] h-[140vh] w-[28vw] bg-gradient-to-b ${colors}`}
+      />
+
+      {/* logo core */}
+
+      <div className="absolute left-1/2 top-[35%] h-[300px] w-[300px] -translate-x-1/2 rounded-full bg-fuchsia-500/15 blur-[120px]" />
     </div>
   );
 }
