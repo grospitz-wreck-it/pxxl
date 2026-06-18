@@ -182,24 +182,25 @@ export default function Home() {
       </section>
 
 <section className="mx-auto max-w-7xl px-6 pb-32">
-  <div className="rounded-[40px] border border-black/10 bg-gradient-to-br from-fuchsia-500/5 to-transparent p-10 text-center md:p-16">
+  <div className="border-t border-black/10 pt-20 text-center">
     <p className="text-sm font-medium tracking-[0.25em] text-fuchsia-500">
       pxxl productions
     </p>
 
     <h2 className="mt-6 text-4xl font-black tracking-tight md:text-6xl">
-      bereit für dein projekt.
+      bereit für dein nächstes projekt?
     </h2>
 
     <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-neutral-600">
-      webseiten, apps, ki-tools, browsergames und digitale produkte.
+      webseiten. apps. ki-tools. widgets.
+      browsergames. digitale produkte.
     </p>
 
     <Link
       href="/contact"
       className="mt-10 inline-flex rounded-full bg-fuchsia-500 px-8 py-4 font-medium text-white transition duration-300 hover:scale-[1.03]"
     >
-      kontakt.
+      kontakt aufnehmen.
     </Link>
   </div>
 </section>
