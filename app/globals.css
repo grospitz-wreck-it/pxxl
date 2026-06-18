@@ -41,95 +41,54 @@ a {
 img {
   user-select: none;
 }
-@keyframes aurora-float {
+@keyframes aurora-drift {
   0% {
-    transform: translate3d(-50%, 0px, 0px)
-      rotate(0deg)
-      scale(1);
-  }
-
-  25% {
-    transform: translate3d(-50%, -20px, 0px)
-      rotate(2deg)
-      scale(1.03);
+    transform: translateY(0px) rotate(var(--r)) scaleY(1);
+    opacity: 0.35;
   }
 
   50% {
-    transform: translate3d(-50%, -35px, 0px)
-      rotate(5deg)
-      scale(1.08);
-  }
-
-  75% {
-    transform: translate3d(-50%, -15px, 0px)
-      rotate(2deg)
-      scale(1.04);
+    transform: translateY(-40px) rotate(calc(var(--r) + 4deg))
+      scaleY(1.15);
+    opacity: 0.6;
   }
 
   100% {
-    transform: translate3d(-50%, 0px, 0px)
-      rotate(0deg)
-      scale(1);
+    transform: translateY(0px) rotate(var(--r)) scaleY(1);
+    opacity: 0.35;
   }
 }
 
-.aurora {
-  animation: aurora-float 18s ease-in-out infinite;
-}
-@keyframes aurora-band {
+@keyframes aurora-drift-slow {
   0% {
-    transform: translateX(0px)
-      translateY(0px)
-      rotate(-10deg)
-      scaleY(1);
+    transform: translateY(0px) rotate(var(--r)) scaleY(1);
+    opacity: 0.25;
   }
 
   50% {
-    transform: translateX(60px)
-      translateY(-30px)
-      rotate(-4deg)
-      scaleY(1.08);
+    transform: translateY(-60px) rotate(calc(var(--r) - 3deg))
+      scaleY(1.2);
+    opacity: 0.55;
   }
 
   100% {
-    transform: translateX(0px)
-      translateY(0px)
-      rotate(-10deg)
-      scaleY(1);
+    transform: translateY(0px) rotate(var(--r)) scaleY(1);
+    opacity: 0.25;
   }
 }
 
-@keyframes aurora-band-reverse {
-  0% {
-    transform: translateX(0px)
-      translateY(0px)
-      rotate(10deg)
-      scaleY(1);
-  }
+.aurora-beam {
+  --r: -10deg;
 
-  50% {
-    transform: translateX(-60px)
-      translateY(-40px)
-      rotate(4deg)
-      scaleY(1.1);
-  }
-
-  100% {
-    transform: translateX(0px)
-      translateY(0px)
-      rotate(10deg)
-      scaleY(1);
-  }
+  filter: blur(80px);
+  mix-blend-mode: multiply;
+  animation: aurora-drift 12s ease-in-out infinite;
 }
 
-.aurora-band {
-  filter: blur(120px);
-  opacity: 0.55;
-  animation: aurora-band 18s ease-in-out infinite;
-}
+.aurora-beam-slow {
+  --r: 10deg;
 
-.aurora-band-reverse {
-  filter: blur(120px);
-  opacity: 0.5;
-  animation: aurora-band-reverse 22s ease-in-out infinite;
+  filter: blur(100px);
+  mix-blend-mode: multiply;
+  animation: aurora-drift-slow 18s ease-in-out infinite;
 }

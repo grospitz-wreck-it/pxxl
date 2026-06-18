@@ -3,67 +3,75 @@
 import { useEffect, useState } from "react";
 
 export default function Aurora() {
-  const [colors, setColors] = useState(
-    "from-fuchsia-500/30 via-violet-500/20 to-cyan-400/20"
-  );
+  const [palette, setPalette] = useState({
+    primary: "from-fuchsia-500/25",
+    secondary: "via-violet-500/20",
+    tertiary: "to-cyan-400/15",
+  });
 
   useEffect(() => {
     const hour = new Date().getHours();
 
     if (hour >= 6 && hour < 12) {
-      setColors(
-        "from-cyan-400/30 via-blue-500/20 to-violet-500/25"
-      );
+      setPalette({
+        primary: "from-cyan-400/25",
+        secondary: "via-blue-500/20",
+        tertiary: "to-violet-500/15",
+      });
     } else if (hour >= 12 && hour < 18) {
-      setColors(
-        "from-fuchsia-500/30 via-pink-500/25 to-violet-500/25"
-      );
+      setPalette({
+        primary: "from-fuchsia-500/25",
+        secondary: "via-pink-500/20",
+        tertiary: "to-violet-500/15",
+      });
     } else if (hour >= 18 && hour < 22) {
-      setColors(
-        "from-orange-400/25 via-fuchsia-500/30 to-violet-600/25"
-      );
+      setPalette({
+        primary: "from-orange-400/20",
+        secondary: "via-fuchsia-500/25",
+        tertiary: "to-violet-600/20",
+      });
     } else {
-      setColors(
-        "from-indigo-600/30 via-violet-700/25 to-cyan-500/20"
-      );
+      setPalette({
+        primary: "from-indigo-600/25",
+        secondary: "via-violet-700/20",
+        tertiary: "to-cyan-500/15",
+      });
     }
   }, []);
 
+  const gradient = `${palette.primary} ${palette.secondary} ${palette.tertiary}`;
+
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
-      {/* band 1 */}
+      {/* links */}
 
       <div
-        className={`aurora-band absolute left-[-15%] top-[-20%] h-[140vh] w-[28vw] bg-gradient-to-b ${colors}`}
+        className={`aurora-beam absolute left-[5%] top-[-20%] h-[140vh] w-[180px] rotate-[-20deg] bg-gradient-to-b ${gradient}`}
       />
-
-      {/* band 2 */}
 
       <div
-        className={`aurora-band-reverse absolute left-[20%] top-[-15%] h-[130vh] w-[24vw] bg-gradient-to-b ${colors}`}
+        className={`aurora-beam-slow absolute left-[18%] top-[-10%] h-[130vh] w-[260px] rotate-[-12deg] bg-gradient-to-b ${gradient}`}
       />
 
-      {/* band 3 */}
+      {/* mitte */}
 
       <div
-        className={`aurora-band absolute left-[45%] top-[-25%] h-[150vh] w-[22vw] bg-gradient-to-b ${colors}`}
+        className={`aurora-beam absolute left-[42%] top-[-15%] h-[150vh] w-[220px] rotate-[8deg] bg-gradient-to-b ${gradient}`}
       />
-
-      {/* band 4 */}
 
       <div
-        className={`aurora-band-reverse absolute left-[65%] top-[-20%] h-[130vh] w-[24vw] bg-gradient-to-b ${colors}`}
+        className={`aurora-beam-slow absolute left-[55%] top-[-20%] h-[140vh] w-[180px] rotate-[16deg] bg-gradient-to-b ${gradient}`}
       />
 
-      {/* band 5 */}
+      {/* rechts */}
 
       <div
-        className={`aurora-band absolute right-[-10%] top-[-10%] h-[140vh] w-[28vw] bg-gradient-to-b ${colors}`}
+        className={`aurora-beam absolute right-[10%] top-[-15%] h-[140vh] w-[240px] rotate-[22deg] bg-gradient-to-b ${gradient}`}
       />
 
-      {/* logo core */}
+      {/* glow hinter Logo */}
 
-      <div className="absolute left-1/2 top-[35%] h-[300px] w-[300px] -translate-x-1/2 rounded-full bg-fuchsia-500/15 blur-[120px]" />
+      <div className="absolute left-1/2 top-[35%] h-[350px] w-[350px] -translate-x-1/2 rounded-full bg-fuchsia-500/12 blur-[120px]" />
     </div>
   );
 }
