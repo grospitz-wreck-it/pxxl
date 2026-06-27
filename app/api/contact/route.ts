@@ -31,7 +31,7 @@ export async function POST(request: Request) {
       formData.get("message")?.toString() ?? "";
 
     await resend.emails.send({
-      from: "onboarding@resend.dev",
+      from: "pxxl productions <info@pxxl.com>",
       replyTo: email,
       to: process.env.CONTACT_EMAIL!,
       subject: `[${subject}] Neue Kontaktanfrage`,
