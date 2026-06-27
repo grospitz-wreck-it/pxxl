@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://pxxl-productions.de"),
+  metadataBase: new URL("https://pxxl.com"),
 
   title: {
     default: "pxxl productions",
@@ -40,8 +40,19 @@ export const metadata: Metadata = {
     title: "pxxl productions",
     description:
       "webseiten, apps, ki-tools, browsergames und digitale produkte aus ostwestfalen.",
+    url: "https://pxxl.com",
+    siteName: "pxxl productions",
     type: "website",
     locale: "de_DE",
+
+    images: [
+      {
+        url: "/og-image.webp",
+        width: 1200,
+        height: 630,
+        alt: "pxxl productions",
+      },
+    ],
   },
 
   twitter: {
@@ -49,6 +60,8 @@ export const metadata: Metadata = {
     title: "pxxl productions",
     description:
       "webseiten, apps, ki-tools, browsergames und digitale produkte.",
+
+    images: ["/og-image.webp"],
   },
 
   robots: {
