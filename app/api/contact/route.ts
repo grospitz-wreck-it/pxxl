@@ -7,6 +7,17 @@ export async function POST(request: Request) {
   try {
     const formData = await request.formData();
 
+    // Honeypot prüfen
+
+    const website =
+      formData.get("website")?.toString() ?? "";
+
+    if (website) {
+      return Response.redirect(
+        new URL("/contact/success", request.url)
+      );
+    }
+
     const subject =
       formData.get("subject")?.toString() ?? "";
 
@@ -23,7 +34,7 @@ export async function POST(request: Request) {
       from: "onboarding@resend.dev",
       replyTo: email,
       to: process.env.CONTACT_EMAIL!,
-      subject: `[${subject}] neue kontaktanfrage`,
+      subject: `[${subject}] Neue Kontaktanfrage`,
       text: `
 name: ${name}
 
@@ -35,16 +46,14 @@ ${message}
 `,
     });
 
-    return NextResponse.redirect(
-  new URL("/contact/success", request.url),
-  303
-);
+    return Response.redirect(
+      new URL("/contact/success", request.url)
+    );
   } catch (error) {
     console.error(error);
 
-    return NextResponse.redirect(
-      new URL("/contact?error=1", request.url),
-      303
+    return Response.redirect(
+      new URL("/contact/success", request.url)
     );
   }
 }

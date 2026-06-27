@@ -54,17 +54,33 @@ export default function ContactPage() {
           </div>
 
           <div>
-            <label className="mb-2 block text-sm font-medium">
-              name
-            </label>
+  <label className="mb-2 block text-sm font-medium">
+    name
+  </label>
 
-            <input
-              type="text"
-              name="name"
-              required
-              className="w-full rounded-2xl border border-black/10 px-5 py-4"
-            />
-          </div>
+  <input
+    type="text"
+    name="name"
+    required
+    className="w-full rounded-2xl border border-black/10 px-5 py-4"
+  />
+</div>
+
+{/* Honeypot */}
+
+<input
+  type="text"
+  name="website"
+  className="hidden"
+  tabIndex={-1}
+  autoComplete="off"
+/>
+
+<input
+  type="hidden"
+  name="formLoadedAt"
+  value={Date.now()}
+/>
 
           <div>
             <label className="mb-2 block text-sm font-medium">
