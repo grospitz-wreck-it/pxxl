@@ -169,7 +169,12 @@ export default function Home() {
                   className="group flex h-full min-w-0 flex-col overflow-hidden rounded-[28px] border border-black/[0.08] bg-white shadow-[0_8px_32px_rgba(0,0,0,0.035)] transition duration-500 hover:-translate-y-1.5 hover:border-black/15 hover:shadow-[0_24px_60px_rgba(0,0,0,0.10)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-fuchsia-500"
                   aria-label={project.action}
                 >
-                  <div\n                    className="relative flex aspect-[1.9/1] flex-col justify-between overflow-hidden bg-[#17171b] bg-cover bg-center p-5 text-white sm:p-6"\n                    style={{\n                      backgroundImage: `linear-gradient(90deg, rgba(12,12,16,.82) 0%, rgba(12,12,16,.48) 58%, rgba(12,12,16,.22) 100%), linear-gradient(0deg, rgba(12,12,16,.72) 0%, transparent 72%), url("${project.image}")`,\n                    }}\n                  >
+                  <div
+                    className="relative flex aspect-[1.9/1] flex-col justify-between overflow-hidden bg-[#17171b] bg-cover bg-center p-5 text-white sm:p-6"
+                    style={{
+                      backgroundImage: `linear-gradient(90deg, rgba(12,12,16,.82) 0%, rgba(12,12,16,.48) 58%, rgba(12,12,16,.22) 100%), linear-gradient(0deg, rgba(12,12,16,.72) 0%, transparent 72%), url("${project.image}")`,
+                    }}
+                  >
                     <div className="pointer-events-none absolute -right-12 -top-16 h-56 w-56 rounded-full bg-fuchsia-500/20 blur-3xl transition duration-700 group-hover:scale-125" />
                     <div className="relative z-10 flex items-center justify-between gap-3">
                       <span className="text-xs font-semibold tracking-[0.22em] text-white/60">
