@@ -54,7 +54,7 @@ export default function ImprintPage() {
             </h2>
 
             <div className="mt-4 space-y-2 text-neutral-700">
-              <p>e-mail: info@pxxl.com</p>
+              <p>e-mail: info<span aria-hidden="true">@</span>pxxl.com</p>
             </div>
           </section>
 
