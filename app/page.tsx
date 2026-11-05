@@ -152,9 +152,6 @@ export default function Home() {
                 Dinge, die wir bauen.
               </h2>
             </div>
-            <p className="max-w-sm text-sm leading-relaxed text-neutral-500 sm:text-right">
-              Drei Ideen. Drei eigene digitale Welten. Entdecke, was dahintersteckt.
-            </p>
           </div>
 
           <div className="grid items-stretch gap-5 md:grid-cols-3">
