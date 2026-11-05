@@ -19,7 +19,7 @@ const projects = [
       "Ein neuer digitaler Raum für Lernen, Austausch und Zusammenarbeit.",
     href: "https://dr1ft.de",
     action: "DR1FT entdecken",
-    theme: "dark",
+    icon: Sparkles,
   },
   {
     number: "02",
@@ -29,7 +29,7 @@ const projects = [
       "Die smarte Verbindung zwischen Zufahrt, Alltag und digitaler Steuerung.",
     href: "https://meineschranke.com",
     action: "Meine Schranke entdecken",
-    theme: "light",
+    icon: CarFront,
   },
   {
     number: "03",
@@ -39,7 +39,7 @@ const projects = [
       "Ein Fußball-Manager mit Retro-Feeling. Lokal verwurzelt, auf den Aufstieg aus.",
     href: "/games/hard-way-up",
     action: "Hard Way Up entdecken",
-    theme: "game",
+    icon: Gamepad2,
   },
 ];
 
@@ -158,123 +158,114 @@ export default function Home() {
           </div>
 
           <div className="grid items-stretch gap-5 md:grid-cols-3">
-            {projects.map((project) => (
-              <Link
-                key={project.number}
-                href={project.href}
-                target={project.href.startsWith("http") ? "_blank" : undefined}
-                rel={project.href.startsWith("http") ? "noreferrer" : undefined}
-                className="group flex h-full min-w-0 flex-col overflow-hidden rounded-[28px] border border-black/[0.08] bg-white shadow-[0_8px_32px_rgba(0,0,0,0.035)] transition duration-500 hover:-translate-y-1.5 hover:border-black/15 hover:shadow-[0_24px_60px_rgba(0,0,0,0.10)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-fuchsia-500"
-                aria-label={project.action}
-              >
-                <div
-                  className={
-                    project.theme === "dark"
-                      ? "relative flex aspect-[1.65/1] flex-col justify-between overflow-hidden bg-[#17171b] p-5 text-white sm:p-6"
-                      : project.theme === "light"
-                        ? "relative flex aspect-[1.28/1] flex-col justify-between overflow-hidden bg-[#e9e9e5] p-5 text-[#171717] sm:p-6"
-                        : "relative flex aspect-[1.28/1] flex-col justify-between overflow-hidden bg-[#25231f] p-6 text-white sm:p-7"
-                  }
+            {projects.map((project) => {
+              const ProjectIcon = project.icon;
+              return (
+                <Link
+                  key={project.number}
+                  href={project.href}
+                  target={project.href.startsWith("http") ? "_blank" : undefined}
+                  rel={project.href.startsWith("http") ? "noreferrer" : undefined}
+                  className="group flex h-full min-w-0 flex-col overflow-hidden rounded-[28px] border border-black/[0.08] bg-white shadow-[0_8px_32px_rgba(0,0,0,0.035)] transition duration-500 hover:-translate-y-1.5 hover:border-black/15 hover:shadow-[0_24px_60px_rgba(0,0,0,0.10)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-fuchsia-500"
+                  aria-label={project.action}
                 >
-                  <div className="pointer-events-none absolute -right-12 -top-16 h-56 w-56 rounded-full bg-fuchsia-500/20 blur-3xl transition duration-700 group-hover:scale-125" />
-                  <div className="relative z-10 flex items-center justify-between">
-                    <span className="text-xs font-semibold tracking-[0.22em] opacity-65">
-                      {project.number} / 03
-                    </span>
-                    <span className="rounded-full border border-current/20 px-3 py-1 text-[10px] font-semibold tracking-[0.16em] opacity-70">
-                      {project.category}
-                    </span>
-                  </div>
+                  <div className="relative flex aspect-[1.9/1] flex-col justify-between overflow-hidden bg-[#17171b] p-5 text-white sm:p-6">
+                    <div className="pointer-events-none absolute -right-12 -top-16 h-56 w-56 rounded-full bg-fuchsia-500/20 blur-3xl transition duration-700 group-hover:scale-125" />
+                    <div className="relative z-10 flex items-center justify-between gap-3">
+                      <span className="text-xs font-semibold tracking-[0.22em] text-white/60">
+                        {project.number} / 03
+                      </span>
+                      <span className="rounded-full border border-white/20 px-3 py-1 text-[10px] font-semibold tracking-[0.16em] text-white/70">
+                        {project.category}
+                      </span>
+                    </div>
 
-                  {project.theme === "dark" ? (
-                    <div className="relative z-10">
-                      <div className="mb-3 flex items-center gap-2 text-fuchsia-300">
-                        <Sparkles size={17} />
-                        <span className="text-[10px] font-semibold tracking-[0.3em]">A DIGITAL EXPERIENCE</span>
-                      </div>
-                      <div className="text-[clamp(3rem,6vw,4.6rem)] font-black leading-none tracking-[-0.09em]">
-                        DR1FT<span className="text-fuchsia-400">.</span>
-                      </div>
-                    </div>
-                  ) : project.theme === "light" ? (
-                    <div className="relative z-10 flex items-end justify-between">
-                      <div className="max-w-[75%]">
-                        <p className="text-[10px] font-semibold tracking-[0.28em] text-neutral-500">SMART ACCESS</p>
-                        <div className="mt-2 text-3xl font-black leading-[0.9] tracking-[-0.07em] sm:text-4xl">
-                          MEINE
-                          <br />
-                          SCHRANKE
-                        </div>
-                      </div>
-                      <div className="mb-1 flex h-12 w-12 items-center justify-center rounded-full border border-black/10 bg-white/70 shadow-sm transition duration-500 group-hover:rotate-[-6deg] group-hover:scale-105">
-                        <CarFront size={34} strokeWidth={1.5} />
-                      </div>
-                    </div>
-                  ) : (
                     <div className="relative z-10 flex items-end justify-between gap-3">
-                      <div>
-                        <p className="mb-2 text-[10px] font-semibold tracking-[0.28em] text-orange-200/75">ARCADE FOOTBALL</p>
-                        <div className="text-4xl font-black leading-[0.86] tracking-[-0.08em] sm:text-5xl">
-                          HARD
-                          <br />
-                          WAY UP
-                        </div>
+                      <div className="min-w-0">
+                        <p className="mb-2 text-[10px] font-semibold tracking-[0.28em] text-fuchsia-200/80">
+                          PXXL PROJECT
+                        </p>
+                        <h3 className="text-3xl font-black leading-[0.92] tracking-[-0.07em] sm:text-4xl">
+                          {project.name}
+                        </h3>
                       </div>
-                      <div className="mb-1 flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-white/15 bg-white/10 transition duration-500 group-hover:rotate-6 group-hover:scale-105">
-                        <Gamepad2 size={34} strokeWidth={1.5} />
+                      <div className="mb-0.5 flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/15 bg-white/10 transition duration-500 group-hover:rotate-6 group-hover:scale-105">
+                        <ProjectIcon size={23} strokeWidth={1.6} />
                       </div>
                     </div>
-                  )}
-                </div>
-
-                <div className="flex flex-1 flex-col p-6 sm:p-7">
-                  <p className="text-sm leading-relaxed text-neutral-600">
-                    {project.description}
-                  </p>
-                  <div className="mt-7 flex items-center justify-between border-t border-black/[0.07] pt-5 text-sm font-semibold">
-                    <span>{project.action}</span>
-                    <span className="flex h-9 w-9 items-center justify-center rounded-full bg-neutral-100 transition duration-300 group-hover:bg-fuchsia-500 group-hover:text-white">
-                      <ArrowUpRight size={17} />
-                    </span>
                   </div>
-                </div>
-              </Link>
-            ))}
+
+                  <div className="flex flex-1 flex-col p-6 sm:p-7">
+                    <p className="text-sm leading-relaxed text-neutral-600">
+                      {project.description}
+                    </p>
+                    <div className="mt-7 flex items-center justify-between border-t border-black/[0.07] pt-5 text-sm font-semibold">
+                      <span>{project.action}</span>
+                      <span className="flex h-9 w-9 items-center justify-center rounded-full bg-neutral-100 transition duration-300 group-hover:bg-fuchsia-500 group-hover:text-white">
+                        <ArrowUpRight size={17} />
+                      </span>
+                    </div>
+                  </div>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* About */}
-      <section id="about" className="mx-auto max-w-7xl scroll-mt-24 px-5 pb-28 sm:px-6">
-        <div className="border-t border-black/10 pt-16 text-center sm:pt-20">
-          <p className="text-xs font-semibold tracking-[0.35em] text-fuchsia-500">
-            über
-          </p>
+      {/* About – a deliberate, balanced typographic grid */}
+      <section id="about" className="scroll-mt-24 border-y border-black/10 bg-white/35 px-5 py-20 sm:px-6 sm:py-24">
+        <div className="mx-auto max-w-6xl">
+          <div className="text-center">
+            <p className="text-xs font-semibold tracking-[0.35em] text-fuchsia-500">
+              über
+            </p>
+            <h2 className="mt-5 text-4xl font-black tracking-[-0.065em] sm:text-5xl md:text-7xl">
+              pxxl productions
+            </h2>
+          </div>
 
-          <h2 className="mt-5 text-4xl font-black tracking-tight sm:text-5xl md:text-7xl">
-            pxxl productions
-          </h2>
+          <div className="mx-auto mt-12 grid max-w-5xl gap-x-12 gap-y-9 md:grid-cols-2 md:gap-y-10">
+            <div className="border-t-2 border-[#171717] pt-5">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-fuchsia-500">
+                was wir machen
+              </p>
+              <p className="mt-4 text-lg leading-[1.55] text-neutral-700 sm:text-xl">
+                pxxl productions entwickelt moderne apps, browsergames, webseiten,
+                ki-tools, widgets und digitale produkte.
+              </p>
+            </div>
 
-          <p className="mx-auto mt-8 max-w-3xl text-lg leading-relaxed text-neutral-600 sm:text-xl">
-            pxxl productions entwickelt moderne apps, browsergames, webseiten, ki-tools,
-            widgets und digitale produkte.
-          </p>
+            <div className="border-t-2 border-[#171717] pt-5">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-fuchsia-500">
+                worauf wir uns fokussieren
+              </p>
+              <p className="mt-4 text-lg leading-[1.55] text-neutral-700 sm:text-xl">
+                performante webanwendungen, kreative digitale erlebnisse und
+                innovative softwarelösungen für unternehmen, startups und eigene
+                produkte.
+              </p>
+            </div>
 
-          <p className="mx-auto mt-5 max-w-3xl text-lg leading-relaxed text-neutral-600 sm:text-xl">
-            der fokus liegt auf performanten webanwendungen, kreativen digitalen
-            erlebnissen und innovativen softwarelösungen für unternehmen,
-            startups und eigene produkte.
-          </p>
-
-          <p className="mt-5 max-w-4xl text-lg leading-relaxed text-neutral-600 sm:text-xl">
-            tätig in kirchlengern, bünde, löhne, herford, bielefeld, osnabrück
-            und ganz ostwestfalen.
-          </p>
+            <div className="md:col-span-2 border-t border-black/15 pt-5 text-center">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-neutral-400">
+                aus ostwestfalen für die region
+              </p>
+              <p className="mt-3 text-sm font-medium leading-relaxed tracking-[0.04em] text-neutral-600 sm:text-base">
+                kirchlengern <span className="px-2 text-fuchsia-500">·</span> bünde
+                <span className="px-2 text-fuchsia-500">·</span> löhne
+                <span className="px-2 text-fuchsia-500">·</span> herford
+                <span className="px-2 text-fuchsia-500">·</span> bielefeld
+                <span className="px-2 text-fuchsia-500">·</span> osnabrück
+                <span className="px-2 text-fuchsia-500">·</span> ostwestfalen
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Contact CTA */}
-      <section className="mx-auto max-w-7xl px-5 pb-28 sm:px-6">
+      <section className="mx-auto max-w-7xl px-5 pb-28 pt-20 sm:px-6">
         <div className="rounded-[32px] border border-black/10 bg-white/65 px-6 py-14 text-center shadow-[0_12px_50px_rgba(0,0,0,0.035)] sm:px-12 sm:py-16">
           <p className="text-xs font-semibold tracking-[0.3em] text-fuchsia-500">
             pxxl productions
