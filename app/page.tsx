@@ -5,6 +5,7 @@ import {
   ArrowUpRight,
   CarFront,
   Gamepad2,
+  Mail,
   Sparkles,
 } from "lucide-react";
 import Aurora from "@/components/aurora";
@@ -93,9 +94,9 @@ export default function Home() {
             </Link>
             <Link
               href="/contact"
-              className="inline-flex min-h-10 items-center gap-2 rounded-full bg-[#111111] px-5 text-sm font-medium text-white shadow-sm transition duration-300 hover:-translate-y-0.5 hover:bg-fuchsia-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-fuchsia-500"
+              className="inline-flex min-h-10 items-center gap-2 rounded-full bg-[#111111] py-1.5 pl-5 pr-2 text-sm font-medium text-white shadow-sm transition duration-300 hover:-translate-y-0.5 hover:bg-fuchsia-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-fuchsia-500"
             >
-              kontakt <ArrowUpRight size={15} strokeWidth={2} />
+              kontakt <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white/15"><Mail size={14} strokeWidth={1.8} /></span>
             </Link>
           </nav>
         </div>
@@ -169,9 +170,9 @@ export default function Home() {
                 <div
                   className={
                     project.theme === "dark"
-                      ? "relative flex aspect-[1.28/1] flex-col justify-between overflow-hidden bg-[#17171b] p-6 text-white sm:p-7"
+                      ? "relative flex aspect-[1.65/1] flex-col justify-between overflow-hidden bg-[#17171b] p-5 text-white sm:p-6"
                       : project.theme === "light"
-                        ? "relative flex aspect-[1.28/1] flex-col justify-between overflow-hidden bg-[#e9e9e5] p-6 text-[#171717] sm:p-7"
+                        ? "relative flex aspect-[1.28/1] flex-col justify-between overflow-hidden bg-[#e9e9e5] p-5 text-[#171717] sm:p-6"
                         : "relative flex aspect-[1.28/1] flex-col justify-between overflow-hidden bg-[#25231f] p-6 text-white sm:p-7"
                   }
                 >
@@ -191,7 +192,7 @@ export default function Home() {
                         <Sparkles size={17} />
                         <span className="text-[10px] font-semibold tracking-[0.3em]">A DIGITAL EXPERIENCE</span>
                       </div>
-                      <div className="text-[clamp(3.4rem,7vw,5.4rem)] font-black leading-none tracking-[-0.09em]">
+                      <div className="text-[clamp(3rem,6vw,4.6rem)] font-black leading-none tracking-[-0.09em]">
                         DR1FT<span className="text-fuchsia-400">.</span>
                       </div>
                     </div>
@@ -205,7 +206,7 @@ export default function Home() {
                           SCHRANKE
                         </div>
                       </div>
-                      <div className="mb-1 flex h-16 w-16 items-center justify-center rounded-2xl border border-black/10 bg-white/70 shadow-sm transition duration-500 group-hover:rotate-[-6deg] group-hover:scale-105">
+                      <div className="mb-1 flex h-12 w-12 items-center justify-center rounded-full border border-black/10 bg-white/70 shadow-sm transition duration-500 group-hover:rotate-[-6deg] group-hover:scale-105">
                         <CarFront size={34} strokeWidth={1.5} />
                       </div>
                     </div>
@@ -219,7 +220,7 @@ export default function Home() {
                           WAY UP
                         </div>
                       </div>
-                      <div className="mb-1 flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl border border-white/15 bg-white/10 transition duration-500 group-hover:rotate-6 group-hover:scale-105">
+                      <div className="mb-1 flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-white/15 bg-white/10 transition duration-500 group-hover:rotate-6 group-hover:scale-105">
                         <Gamepad2 size={34} strokeWidth={1.5} />
                       </div>
                     </div>
@@ -245,7 +246,7 @@ export default function Home() {
 
       {/* About */}
       <section id="about" className="mx-auto max-w-7xl scroll-mt-24 px-5 pb-28 sm:px-6">
-        <div className="border-t border-black/10 pt-16 sm:pt-20">
+        <div className="border-t border-black/10 pt-16 text-center sm:pt-20">
           <p className="text-xs font-semibold tracking-[0.35em] text-fuchsia-500">
             über
           </p>
@@ -254,12 +255,12 @@ export default function Home() {
             pxxl productions
           </h2>
 
-          <p className="mt-8 max-w-4xl text-lg leading-relaxed text-neutral-600 sm:text-xl">
+          <p className="mx-auto mt-8 max-w-3xl text-lg leading-relaxed text-neutral-600 sm:text-xl">
             pxxl productions entwickelt moderne apps, browsergames, webseiten, ki-tools,
             widgets und digitale produkte.
           </p>
 
-          <p className="mt-5 max-w-4xl text-lg leading-relaxed text-neutral-600 sm:text-xl">
+          <p className="mx-auto mt-5 max-w-3xl text-lg leading-relaxed text-neutral-600 sm:text-xl">
             der fokus liegt auf performanten webanwendungen, kreativen digitalen
             erlebnissen und innovativen softwarelösungen für unternehmen,
             startups und eigene produkte.
@@ -288,7 +289,7 @@ export default function Home() {
             href="/contact"
             className="mt-8 inline-flex items-center gap-2 rounded-full bg-fuchsia-500 px-7 py-4 font-medium text-white transition duration-300 hover:-translate-y-0.5 hover:bg-fuchsia-600"
           >
-            kontakt aufnehmen <ArrowUpRight size={17} />
+            kontakt aufnehmen
           </Link>
         </div>
       </section>
