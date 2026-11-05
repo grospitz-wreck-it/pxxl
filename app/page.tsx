@@ -252,20 +252,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="md:col-span-2 border-t border-black/15 pt-5 text-center">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.24em] text-neutral-400">
-                aus ostwestfalen für die region
-              </p>
-              <p className="mt-3 text-sm font-medium leading-relaxed tracking-[0.04em] text-neutral-600 sm:text-base">
-                kirchlengern <span className="px-2 text-fuchsia-500">·</span> bünde
-                <span className="px-2 text-fuchsia-500">·</span> löhne
-                <span className="px-2 text-fuchsia-500">·</span> herford
-                <span className="px-2 text-fuchsia-500">·</span> bielefeld
-                <span className="px-2 text-fuchsia-500">·</span> osnabrück
-                <span className="px-2 text-fuchsia-500">·</span> ostwestfalen
-              </p>
-            </div>
-          </div>
+         </div>
         </div>
       </section>
 
